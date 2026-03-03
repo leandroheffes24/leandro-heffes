@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leandro Heffes — Sitios Web que Generan Resultados</title>
+  <meta name="description" content="Diseño sitios web estratégicos que convierten visitantes en clientes. Análisis de comportamiento, UX, copywriting y optimización continua." />
+  <link rel="icon" type="image/ico" href="./assets/favicon/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="menuClose">✕</button>
+    <a href="#sobre-mi" onclick="closeMobileMenu()">Sobre mí</a>
+    <a href="#servicios" onclick="closeMobileMenu()">Servicios</a>
+    <a href="#proceso" onclick="closeMobileMenu()">Proceso</a>
+    <a href="#proyectos" onclick="closeMobileMenu()">Proyectos</a>
+    <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <img src="./assets/images/logo.png" alt="Leandro Heffes" class="nav-logo-img" />
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+        </ul>
+
+        <a href="#contacto" class="nav-cta">Hablemos</a>
+
+        <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-line-v"></div>
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-tag">Estrategia · Diseño · Resultados</p>
+        <h1 class="hero-headline">
+          Tu sitio web debería ser<br>
+          tu <em>mejor vendedor.</em>
+        </h1>
+        <p class="hero-sub">
+          No solo diseño sitios web bonitos. Diseño sitios web que estudian a tu cliente,
+          guían su atención y generan resultados concretos con datos reales,
+          no suposiciones.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn-primary">Quiero un sitio que venda</a>
+          <a href="#sobre-mi" class="btn-ghost">
+            Conocé el enfoque
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ==================== MARQUEE BAND ==================== -->
+  <div class="statement-band">
+    <div class="statement-track">
+      <span>Estudio</span><span class="dot">·</span>
+      <span>Estrategia</span><span class="dot">·</span>
+      <span>Diseño</span><span class="dot">·</span>
+      <span>Resultados</span><span class="dot">·</span>
+      <span>Análisis de comportamiento</span><span class="dot">·</span>
+      <span>Mejora continua</span><span class="dot">·</span>
+      <span>Conversiones reales</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- ==================== SOBRE MÍ ==================== -->
+  <section id="sobre-mi">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-visual reveal">
+          <div class="about-photo-frame">
+            <div class="about-photo-placeholder">
+              <div class="initials">LH</div>
+              <p>Tu foto aquí</p>
+            </div>
+          </div>
+          <div class="about-accent-line"></div>
+          <div class="about-accent-line-tl"></div>
+        </div>
+
+        <div class="about-text-col">
+          <p class="section-label reveal">Sobre mí</p>
+          <h2 class="about-title reveal reveal-delay-1">
+            No soy solo un diseñador web.<br>
+            Soy el estratega que hace<br>
+            <em>trabajar tu negocio</em>.
+          </h2>
+          <p class="about-text reveal reveal-delay-2">
+            La mayoría de los sitios web existen. El tuyo debería <strong>trabajar</strong>.
+            Existe una diferencia enorme entre tener presencia digital y tener
+            una herramienta que convierte visitas en clientes, todos los días, sin que hagas nada.
+          </p>
+          <p class="about-text reveal reveal-delay-3">
+            Mi método combina <strong>psicología del consumidor, UX, copywriting estratégico
+            y análisis de comportamiento real</strong> para diseñar cada sección con un propósito:
+            que quien entre a tu sitio sienta que tiene que contactarte.
+          </p>
+          <p class="about-text reveal reveal-delay-3">
+            Y no paro ahí. Mido. Analizo qué leen, qué ignoran, dónde se van.
+            Y con eso, <strong>mejoro el sitio mes a mes</strong> hasta que cada visita valga más.
+          </p>
+
+          <div class="about-stats reveal reveal-delay-4">
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Orientado a resultados</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">∞</span>
+              <span class="stat-label">Mejora continua</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">0</span>
+              <span class="stat-label">Plantillas genéricas</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICIOS ==================== -->
+  <section id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal" style="justify-content:center; margin-bottom:24px;">Servicios</p>
+        <h2 class="section-title reveal reveal-delay-1">
+          Cada sitio tiene un <em>propósito</em>.<br>
+          Trabajamos para cumplirlo.
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Ya sea que necesites convertir visitantes en clientes o simplemente
+          tener una presencia digital impecable, construimos lo que tu negocio necesita.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card featured reveal">
+          <div class="featured-badge">Principal</div>
+          <div class="service-number">01</div>
+          <h3 class="service-name">Sitios Web<br>Funcionales</h3>
+          <p class="service-desc">
+            Diseño estratégico orientado a conversión. Analizo tu negocio, tu cliente ideal
+            y su comportamiento para construir un sitio que guíe cada visita hacia la acción
+            que más te importa. Luego mido y optimizo hasta que los números hablen.
+          </p>
+          <div class="service-tag-list">
+            <span class="service-tag">UX / UI</span>
+            <span class="service-tag">Copywriting</span>
+            <span class="service-tag">Conversión</span>
+            <span class="service-tag">Análisis</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-number">02</div>
+          <h3 class="service-name">Sitios Web<br>a Medida</h3>
+          <p class="service-desc">
+            No todo sitio tiene como objetivo un formulario. A veces se trata de contar una
+            historia, mostrar un portafolio, o simplemente tener una presencia digital que
+            esté a la altura de tu marca. Lo hacemos con el mismo nivel de detalle y cuidado.
+          </p>
+          <div class="service-tag-list">
+            <span class="service-tag">Diseño</span>
+            <span class="service-tag">Desarrollo</span>
+            <span class="service-tag">Identidad</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-number">03</div>
+          <h3 class="service-name">Acompañamiento<br>Mensual</h3>
+          <p class="service-desc">
+            Tu sitio no es un producto, es un proceso. Con una cuota mensual, trabajamos
+            juntos para analizar datos reales, identificar oportunidades y mejorar lo que
+            no está funcionando. Tu sitio crece con tu negocio.
+          </p>
+          <div class="service-tag-list">
+            <span class="service-tag">Analítica</span>
+            <span class="service-tag">A/B Testing</span>
+            <span class="service-tag">Optimización</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROCESO ==================== -->
+  <section id="proceso">
+    <div class="container">
+      <div class="process-intro">
+        <div>
+          <p class="section-label reveal">Cómo trabajo</p>
+          <h2 class="process-title reveal reveal-delay-1">
+            Un proceso pensado<br>
+            para <em>resultados reales</em>.
+          </h2>
+        </div>
+        <p class="process-desc reveal reveal-delay-2">
+          Nada es al azar. Cada decisión de diseño, cada palabra y cada botón tiene una
+          razón estratégica detrás. Así es como convierto tu negocio en un sitio web que trabaja.
+        </p>
+      </div>
+
+      <div class="process-steps">
+
+        <div class="process-step reveal">
+          <div class="step-indicator">
+            <div class="step-dot"><span class="step-dot-num">01</span></div>
+          </div>
+          <div class="step-body">
+            <h3 class="step-title">Diagnóstico estratégico</h3>
+            <p class="step-desc">
+              Antes de diseñar un píxel, entiendo tu negocio a fondo. Quién es tu cliente ideal,
+              qué lo motiva, qué le genera fricción, y qué acción querés que tome cuando llegue a tu sitio.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-indicator">
+            <div class="step-dot"><span class="step-dot-num">02</span></div>
+          </div>
+          <div class="step-body">
+            <h3 class="step-title">Estrategia de conversión</h3>
+            <p class="step-desc">
+              Defino la arquitectura del sitio, el flujo de atención y los mensajes clave.
+              Cada sección tiene un rol: capturar, convencer o convertir.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-indicator">
+            <div class="step-dot"><span class="step-dot-num">03</span></div>
+          </div>
+          <div class="step-body">
+            <h3 class="step-title">Diseño y desarrollo</h3>
+            <p class="step-desc">
+              Construyo el sitio con foco en la experiencia de usuario, la velocidad de carga
+              y la estética que refleje el nivel de tu marca. Sin plantillas genéricas.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-indicator">
+            <div class="step-dot"><span class="step-dot-num">04</span></div>
+          </div>
+          <div class="step-body">
+            <h3 class="step-title">Lanzamiento y medición</h3>
+            <p class="step-desc">
+              Publicamos el sitio y configuramos herramientas de analítica para empezar a
+              registrar el comportamiento real de tus visitantes desde el primer día.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-indicator">
+            <div class="step-dot"><span class="step-dot-num">05</span></div>
+          </div>
+          <div class="step-body">
+            <h3 class="step-title">Optimización continua</h3>
+            <p class="step-desc">
+              Analizo los datos mes a mes: qué funciona, qué no, dónde se pierde gente y por qué.
+              Hacemos cambios basados en evidencia, no intuición. Tu sitio siempre mejora.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROYECTOS ==================== -->
+  <section id="proyectos">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal" style="justify-content:center; margin-bottom:24px;">Proyectos</p>
+        <h2 class="section-title reveal reveal-delay-1">
+          El trabajo habla<br>
+          <em>por sí solo</em>.
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Los primeros proyectos están en camino. Cada uno será un caso real de
+          cómo un sitio estratégico transforma un negocio.
+        </p>
+      </div>
+
+      <div class="projects-coming">
+
+        <a href="https://www.terraseguridad.com.ar/" target="_blank" class="project-card">
+          <div class="project-img-wrap">
+            <img src="./assets/images/Terra Seguridad Mockup.png" alt="Terra Seguridad" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-visit">Ver sitio →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-name">Terra Seguridad</h3>
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+
+        <a href="https://sw-asistencia-virtual.vercel.app/" target="_blank" class="project-card">
+          <div class="project-img-wrap">
+            <img src="./assets/images/SW Asistencia Virtual mockup.png" alt="SW Asistencia Virtual" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-visit">Ver sitio →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-name">SW Asistencia Virtual</h3>
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+
+        <a href="https://verdemente.vercel.app/" target="_blank" class="project-card">
+          <div class="project-img-wrap">
+            <img src="./assets/images/Verdemente mockup.png" alt="Verdemente" class="project-img" />
+            <div class="project-overlay">
+              <span class="project-visit">Ver sitio →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-name">Verdemente</h3>
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+
+      </div>
+
+      <p class="projects-note reveal reveal-delay-2">
+        ¿Querés ser parte de los primeros casos? <strong>Contactame ahora</strong> y trabajamos juntos
+        desde el inicio con condiciones especiales de lanzamiento.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIOS ==================== -->
+  <section id="testimonios">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal" style="justify-content:center; margin-bottom:24px;">Testimonios</p>
+        <h2 class="section-title reveal reveal-delay-1">
+          Lo que dicen<br>
+          <em>quienes confiaron</em>.
+        </h2>
+      </div>
+
+      <div class="testimonials-grid reveal reveal-delay-1">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            ¡Excelente programador! Le doy 5 estrellas indiscutibles. La web que armó para Terra Seguridad quedó increíble. Tiene un diseño de primer nivel, carga rapidísimo y se ve perfecta en celulares. Además, hizo un trabajo técnico impecable conectando los formularios de la página directamente con nuestro CRM, lo que nos facilita el trabajo del día a día de forma increíble. Gran talento, súper responsable y superó todas mis expectativas.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">BB</div>
+            <div>
+              <p class="testimonial-name">Berenise Betancour</p>
+              <p class="testimonial-role">Directora — Terra Seguridad</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card featured">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            Leandro desarrolló el sitio web de SW Asistencia Virtual de principio a fin, y el resultado superó todas mis expectativas. Desde el primer momento entendió exactamente lo que necesitaba: un sitio profesional, moderno y que realmente transmitiera confianza a mis potenciales clientes. La comunicación durante todo el proceso fue clara y fluida, siempre atento a cada detalle y abierto a los cambios que fui pidiendo.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SW</div>
+            <div>
+              <p class="testimonial-name">Silvia Waimann</p>
+              <p class="testimonial-role">Asistente Virtual — SW Asistencia Virtual</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            Otros diseñadores nos entregaban el sitio y desaparecían. Con Leandro
+            tenemos reuniones mensuales, vemos los datos juntos y siempre hay algo
+            mejorando. Es como tener un socio digital.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">FP</div>
+            <div>
+              <p class="testimonial-name">Federico Peralta</p>
+              <p class="testimonial-role">Gerente Comercial — Grupo Peralta RRHH</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACTO ==================== -->
+  <section id="contacto">
+    <div class="container">
+      <div class="contact-inner">
+
+        <div>
+          <p class="section-label reveal">Contacto</p>
+          <h2 class="contact-title reveal reveal-delay-1">
+            ¿Tu negocio merece<br>
+            un sitio que <em>trabaje</em><br>
+            por vos?
+          </h2>
+          <p class="contact-desc reveal reveal-delay-2">
+            Contame en qué estás trabajando. Sin compromiso, sin formularios complicados.
+            Elegís cómo hablar, yo me adapto a vos.
+          </p>
+
+          <div class="contact-options reveal reveal-delay-3">
+
+            <!-- WhatsApp — reemplazá el número -->
+            <a href="https://wa.me/5491167457009?text=Hola%20Leandro%2C%20me%20interesa%20hablar%20sobre%20mi%20sitio%20web." target="_blank" class="contact-btn">
+              <div class="contact-btn-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="contact-btn-info">
+                <p class="contact-btn-label">WhatsApp</p>
+                <p class="contact-btn-value">Escribime directo</p>
+              </div>
+              <div class="contact-arrow">→</div>
+            </a>
+
+            <!-- Email — reemplazá el mail -->
+            <button onclick="copiarMail()" class="contact-btn" style="cursor:none; width:100%; text-align:left;">
+              <div class="contact-btn-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="22,6 12,13 2,6" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="contact-btn-info">
+                <p class="contact-btn-label">Email</p>
+                <p class="contact-btn-value" id="mail-btn-text">leandroheffes2408@gmail.com</p>
+              </div>
+              <div class="contact-arrow">→</div>
+            </button>
+
+          </div>
+        </div>
+
+        <div class="contact-side-info">
+          <div class="info-block reveal reveal-delay-1">
+            <h4 class="info-block-title">¿Qué pasa después de que me escribís?</h4>
+            <p class="info-block-text">
+              Tenemos una charla rápida para entender tu negocio y lo que necesitás.
+              Sin tecnicismos, sin presión. Si hay una buena oportunidad de trabajar juntos,
+              lo vemos ahí mismo.
+            </p>
+          </div>
+          <div class="info-block reveal reveal-delay-2">
+            <h4 class="info-block-title">¿Para qué tipo de negocios trabajo?</h4>
+            <p class="info-block-text">
+              Locales y empresas que entienden que su sitio web es una inversión,
+              no un gasto. Pymes, emprendedores y negocios en crecimiento que quieren
+              resultados de verdad.
+            </p>
+          </div>
+          <div class="info-block reveal reveal-delay-3">
+            <h4 class="info-block-title">¿Cuánto cuesta?</h4>
+            <p class="info-block-text">
+              Cada proyecto es distinto y tiene su propio alcance. Por eso trabajamos
+              el presupuesto a medida, sin precios de lista que no contemplan lo que
+              realmente necesitás.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="./assets/images/logo.png" alt="Leandro Heffes" class="footer-logo-img" />
+        </div>
+        <div class="footer-links">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#contacto">Contacto</a>
+          <a href="#proyectos">Proyectos</a>
+        </div>
+        <p class="footer-copy">© 2026 Leandro Heffes · Todos los derechos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+
+</body>
+</html>
