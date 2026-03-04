@@ -312,15 +312,6 @@ nav.scrolled {
     radial-gradient(ellipse 40% 60% at 10% 80%, rgba(200,164,76,0.04) 0%, transparent 60%);
 }
 
-.hero-line-v {
-  position: absolute;
-  top: 0; bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(200,164,76,0.12) 30%, rgba(200,164,76,0.12) 70%, transparent);
-  pointer-events: none;
-}
-
 .hero-content {
   position: relative;
   z-index: 1;
