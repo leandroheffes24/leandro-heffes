@@ -1435,3 +1435,14 @@ footer {
     font-size: 0.95rem;
   }
 }
+
+@media (hover: none) {
+  #cursor-dot,
+  #cursor-ring {
+    display: none;
+  }
+
+  body {
+    cursor: auto;
+  }
+}
