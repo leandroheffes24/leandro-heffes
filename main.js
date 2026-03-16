@@ -48,11 +48,27 @@ function closeMobileMenu() {
 /* ==============================
    SCROLL REVEAL
 ============================== */
-const reveals = document.querySelectorAll('.reveal');
+/* const reveals = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+reveals.forEach(el => revealObserver.observe(el)); */
+const reveals = document.querySelectorAll('.reveal');
+
+// Ocultamos por JS, no por CSS — así Clarity y otros tools ven el contenido
+reveals.forEach(el => el.classList.add('hidden'));
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('hidden');
       entry.target.classList.add('visible');
       revealObserver.unobserve(entry.target);
     }
