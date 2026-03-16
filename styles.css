@@ -649,6 +649,7 @@ nav.scrolled {
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 60px; }
   .about-photo-frame { padding-bottom: 80%; }
+  .about-photo { object-position: center 15%; }
 }
 
 /* ==============================
