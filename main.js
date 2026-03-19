@@ -102,10 +102,10 @@ const track = document.querySelector('.statement-track');
 if (track) track.innerHTML += track.innerHTML;
 
 function copiarMail() {
-  navigator.clipboard.writeText('leandroheffes2408@gmail.com');
+  navigator.clipboard.writeText('contacto@leandroheffes.com');
   const texto = document.getElementById('mail-btn-text');
   texto.textContent = '¡Mail copiado!';
   setTimeout(() => {
-    texto.textContent = 'leandroheffes2408@gmail.com';
+    texto.textContent = 'contacto@leandroheffes.com';
   }, 2000);
 }
