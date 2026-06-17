@@ -101,11 +101,163 @@ window.addEventListener('scroll', () => {
 const track = document.querySelector('.statement-track');
 if (track) track.innerHTML += track.innerHTML;
 
-function copiarMail() {
-  navigator.clipboard.writeText('contacto@leandroheffes.com');
-  const texto = document.getElementById('mail-btn-text');
-  texto.textContent = '¡Mail copiado!';
-  setTimeout(() => {
-    texto.textContent = 'contacto@leandroheffes.com';
-  }, 2000);
-}
+/* ==============================
+   PROYECTOS — VER MÁS / COMPRIMIR
+============================== */
+(function () {
+  const grid   = document.getElementById('proyectos-grid');
+  const toggle = document.getElementById('projectsToggle');
+  const wrap   = document.getElementById('projectsMoreWrap');
+  if (!grid || !toggle || !wrap) return;
+
+  // Si no hay proyectos extra, ocultamos el botón
+  const extras = grid.querySelectorAll('.project-extra');
+  if (extras.length === 0) {
+    wrap.style.display = 'none';
+    return;
+  }
+
+  const label = toggle.querySelector('.projects-toggle-label');
+
+  toggle.addEventListener('click', () => {
+    const expanded = grid.classList.toggle('expanded');
+    toggle.setAttribute('aria-expanded', String(expanded));
+    label.textContent = expanded ? 'Mostrar menos' : 'Ver más proyectos';
+
+    // Al comprimir, volvemos al inicio de la sección para no quedar perdidos
+    if (!expanded) {
+      document.getElementById('proyectos').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+})();
+
+/* ==============================
+   FORMULARIO DE CONTACTO
+============================== */
+(function () {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  // FormSubmit (endpoint AJAX). Tras el primer envío, hay que confirmar el mail una sola vez.
+  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/contacto@leandroheffes.com';
+
+  const fields = {
+    nombre:   form.querySelector('#cf-nombre'),
+    email:    form.querySelector('#cf-email'),
+    whatsapp: form.querySelector('#cf-whatsapp'),
+    mensaje:  form.querySelector('#cf-mensaje'),
+  };
+  const submitBtn = form.querySelector('#cf-submit');
+  const statusEl  = form.querySelector('#cf-status');
+  const successEl = document.getElementById('cf-success');
+  const honey     = form.querySelector('.form-honey');
+
+  function setError(name, msg) {
+    const input = fields[name];
+    const errEl = document.getElementById('err-' + name);
+    if (errEl) errEl.textContent = msg || '';
+    if (input) {
+      input.classList.toggle('invalid', !!msg && msg.trim() !== '');
+      if (msg && msg.trim() !== '') input.setAttribute('aria-invalid', 'true');
+      else input.removeAttribute('aria-invalid');
+    }
+  }
+
+  function clearErrors() {
+    ['nombre', 'email', 'whatsapp', 'mensaje'].forEach(n => setError(n, ''));
+    statusEl.textContent = '';
+  }
+
+  function isValidEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  function validate() {
+    clearErrors();
+    let firstInvalid = null;
+
+    const nombre   = fields.nombre.value.trim();
+    const email    = fields.email.value.trim();
+    const whatsapp = fields.whatsapp.value.trim();
+    const mensaje  = fields.mensaje.value.trim();
+
+    if (!nombre) {
+      setError('nombre', 'Decime tu nombre así sé cómo dirigirme a vos.');
+      firstInvalid = firstInvalid || fields.nombre;
+    }
+
+    if (!email && !whatsapp) {
+      setError('email', 'Dejá al menos un medio de contacto: email o WhatsApp.');
+      setError('whatsapp', ' '); // marca visual sin texto duplicado
+      firstInvalid = firstInvalid || fields.email;
+    } else if (email && !isValidEmail(email)) {
+      setError('email', 'Revisá el email, parece que falta algo.');
+      firstInvalid = firstInvalid || fields.email;
+    }
+
+    if (!mensaje) {
+      setError('mensaje', 'Contame brevemente qué necesitás.');
+      firstInvalid = firstInvalid || fields.mensaje;
+    }
+
+    if (firstInvalid) firstInvalid.focus();
+    return !firstInvalid;
+  }
+
+  // Limpiar errores a medida que el usuario corrige
+  Object.keys(fields).forEach(name => {
+    fields[name].addEventListener('input', () => {
+      if (fields[name].classList.contains('invalid')) setError(name, '');
+      // Error cruzado email/whatsapp: si completa uno, lo limpiamos
+      if (name === 'email' || name === 'whatsapp') {
+        if (fields.email.value.trim() || fields.whatsapp.value.trim()) {
+          const errEmail = document.getElementById('err-email');
+          if (errEmail && errEmail.textContent.includes('medio de contacto')) {
+            setError('email', '');
+            setError('whatsapp', '');
+          }
+        }
+      }
+    });
+  });
+
+  function setLoading(loading) {
+    submitBtn.classList.toggle('is-loading', loading);
+    submitBtn.disabled = loading;
+  }
+
+  function showSuccess() {
+    form.hidden = true;
+    successEl.hidden = false;
+    successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Honeypot: si está completo, es un bot → mostramos éxito sin enviar nada
+    if (honey && honey.value) { showSuccess(); return; }
+
+    if (!validate()) return;
+
+    setLoading(true);
+    statusEl.textContent = '';
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form),
+      });
+
+      if (res.ok) {
+        showSuccess();
+      } else {
+        throw new Error('Respuesta no válida del servidor.');
+      }
+    } catch (err) {
+      setLoading(false);
+      statusEl.textContent = 'Uy, no se pudo enviar el mensaje. Probá de nuevo en un momento o escribime directo por WhatsApp acá abajo.';
+    }
+  });
+})();
